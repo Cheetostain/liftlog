@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@
   .app {
     max-width: 540px;
     margin: 0 auto;
-    padding: 16px 14px 120px;
+    padding: calc(16px + env(safe-area-inset-top)) calc(14px + env(safe-area-inset-right)) calc(120px + env(safe-area-inset-bottom)) calc(14px + env(safe-area-inset-left));
     position: relative;
     z-index: 2;
   }
@@ -883,7 +884,7 @@
   /* SAVE PILL */
   .save-pill {
     position: fixed;
-    bottom: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     background: var(--ink);
