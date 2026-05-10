@@ -1,0 +1,1876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Program IV · Lift Log</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lift Log">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#1f1611">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #ede4d3;
+    --bg-card: #f5ede0;
+    --bg-card-strong: #e8dcc4;
+    --ink: #1f1611;
+    --ink-soft: #4a3d2e;
+    --ink-muted: #6b5a44;
+    --line: #b8a888;
+    --line-soft: #d4c5a5;
+    --burgundy: #6b1f1f;
+    --brass: #a08540;
+    --brass-deep: #7a6428;
+    --sage: #5a6b3f;
+    --shadow: rgba(70, 50, 30, 0.1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
+  input, textarea { user-select: text; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none; opacity: 0.5; z-index: 1;
+  }
+
+  .app {
+    max-width: 540px;
+    margin: 0 auto;
+    padding: 16px 14px 120px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* HEADER (compact) */
+  header.masthead {
+    text-align: center;
+    padding: 8px 0 14px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 14px;
+  }
+  .eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  h1.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 1;
+  }
+  h1.title em { color: var(--burgundy); font-style: italic; }
+
+  /* WEEK SELECTOR */
+  .week-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .week-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    padding: 8px 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .week-pill .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .week-pill .lbl {
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+  .week-pill.active { background: var(--ink); border-color: var(--ink); }
+  .week-pill.active .num { color: var(--bg); }
+  .week-pill.active .lbl { color: var(--brass); }
+  .week-pill.deload .num { color: var(--burgundy); }
+  .week-pill.deload.active { background: var(--burgundy); border-color: var(--burgundy); }
+  .week-pill.deload.active .num { color: var(--bg); }
+  .week-pill.deload.active .lbl { color: #f0d9aa; }
+
+  /* DAY TABS */
+  .day-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 16px;
+  }
+  .day-tab {
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--line-soft);
+    padding: 10px 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .day-tab:last-child { border-right: none; }
+  .day-tab .day-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 700;
+    display: block;
+    line-height: 1.05;
+  }
+  .day-tab .day-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    margin-top: 2px;
+    display: block;
+    line-height: 1.05;
+  }
+  .day-tab.active { background: var(--ink); }
+  .day-tab.active .day-num { color: var(--bg); }
+  .day-tab.active .day-name { color: var(--brass); }
+
+  /* Missed-day indicator: subtle burgundy dot in top-right of tab, no strikethrough */
+  .day-tab { position: relative; }
+  .day-tab.missed::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--burgundy);
+  }
+  .day-tab.missed.active::after { background: var(--brass); }
+  .day-tab.missed .day-num,
+  .day-tab.missed .day-name { opacity: 0.55; }
+  .day-tab.missed.active .day-num,
+  .day-tab.missed.active .day-name { opacity: 0.85; }
+
+  /* IN-DAY SKIP BUTTON (top-right of session header) */
+  .day-skip-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 6px 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    text-transform: uppercase;
+  }
+  .day-skip-btn:active { transform: scale(0.95); }
+  .day-skip-btn.is-skipped {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    border-style: solid;
+    color: #f5e4c8;
+  }
+
+  /* SALVAGE / CARRYOVER EXERCISE */
+  .exercise.salvage {
+    border-left: 4px solid var(--brass);
+    background: var(--bg-card-strong);
+    position: relative;
+  }
+  .exercise.salvage::before {
+    content: 'SALVAGE';
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    color: var(--brass-deep);
+  }
+  .exercise.salvage .ex-name { color: var(--brass-deep); }
+
+  /* SKIP NOTICE for the current day if missed */
+  .skip-notice {
+    background: var(--burgundy);
+    color: #f5e4c8;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    border-left: 4px solid var(--brass);
+  }
+  .skip-notice .head {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 6px;
+  }
+  .skip-notice h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+  .skip-notice h3 em { font-style: italic; color: var(--brass); }
+  .skip-notice p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .skip-notice .restore-btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: transparent;
+    border: 1px solid var(--brass);
+    color: var(--brass);
+    padding: 7px 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .skip-notice .restore-btn:active { background: var(--brass); color: var(--ink); }
+
+  /* CARRYOVER BANNER on receiving days */
+  .carryover-banner {
+    background: var(--bg-card-strong);
+    border: 1px solid var(--brass);
+    border-left: 4px solid var(--brass);
+    padding: 10px 14px;
+    margin-bottom: 14px;
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  .carryover-banner strong {
+    color: var(--brass-deep);
+    letter-spacing: 0.15em;
+    font-size: 10px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* SESSION HEADER */
+  .session-header {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--ink);
+    position: relative;
+    padding-right: 92px;
+    min-height: 56px;
+  }
+  .session-header .focus {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: var(--brass-deep);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .session-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.05;
+  }
+  .session-header h2 em { font-style: italic; color: var(--burgundy); }
+
+  .deload-banner {
+    background: var(--burgundy);
+    color: #f5e4c8;
+    padding: 10px 12px;
+    margin-bottom: 14px;
+    font-size: 11px;
+    border-left: 4px solid var(--brass);
+  }
+  .deload-banner strong { letter-spacing: 0.15em; text-transform: uppercase; font-size: 10px; }
+
+  /* EXERCISE CARDS */
+  .exercise {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    margin-bottom: 12px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+  .exercise.strength {
+    border-left: 4px solid var(--burgundy);
+    background: var(--bg-card-strong);
+  }
+
+  .ex-head {
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid var(--line-soft);
+    cursor: pointer;
+  }
+  .ex-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.15;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .strength .ex-name { color: var(--burgundy); }
+
+  .ex-name .chevron {
+    font-size: 14px;
+    color: var(--ink-muted);
+    transition: transform 0.2s ease;
+    font-weight: 400;
+  }
+  .exercise.collapsed .chevron { transform: rotate(-90deg); }
+  .exercise.collapsed .sets-area { display: none; }
+
+  .ex-target {
+    margin-top: 4px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .ex-target strong { color: var(--ink); }
+  .ex-target .tag {
+    background: var(--ink);
+    color: var(--brass);
+    padding: 1px 6px;
+    letter-spacing: 0.18em;
+    font-size: 8px;
+  }
+  .strength .ex-target .tag { background: var(--burgundy); color: #f5e4c8; }
+
+  .ex-note {
+    margin-top: 6px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+
+  .last-session {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line-soft);
+    font-size: 11px;
+    color: var(--ink-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .last-session .lbl {
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+  }
+  .last-session .data {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 12px;
+  }
+
+  /* SETS */
+  .sets-area {
+    padding: 6px 8px 10px;
+  }
+
+  .set-row {
+    display: grid;
+    grid-template-columns: 28px 1fr 1fr 56px;
+    gap: 6px;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(184, 168, 136, 0.25);
+  }
+  .set-row:last-child { border-bottom: none; }
+  .set-row.done { background: rgba(90, 107, 63, 0.07); }
+
+  .set-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--ink-muted);
+    text-align: center;
+    font-weight: 600;
+  }
+  .set-row.done .set-num { color: var(--sage); font-style: normal; font-weight: 700; }
+
+  /* STEPPER */
+  .stepper {
+    display: grid;
+    grid-template-columns: 32px 1fr 32px;
+    align-items: center;
+    background: rgba(255,255,255,0.4);
+    border: 1px solid var(--line-soft);
+    height: 44px;
+    position: relative;
+  }
+  .stepper.weight {}
+  .stepper.reps {}
+
+  .step-btn {
+    background: transparent;
+    border: none;
+    height: 100%;
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 700;
+    line-height: 1;
+    transition: background 0.1s ease;
+    font-family: inherit;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .step-btn:active { background: var(--ink); color: var(--bg); }
+
+  .stepper input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    -moz-appearance: textfield;
+    padding: 0;
+  }
+  .stepper input::-webkit-outer-spin-button,
+  .stepper input::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  .stepper input:focus { outline: none; background: rgba(160, 133, 64, 0.12); }
+  .stepper input::placeholder { color: var(--ink-muted); font-weight: 500; opacity: 0.6; }
+
+  .stepper-label {
+    position: absolute;
+    top: -7px;
+    left: 6px;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    background: var(--bg-card);
+    padding: 0 4px;
+    pointer-events: none;
+  }
+  .strength .stepper-label { background: var(--bg-card-strong); }
+  .set-row.done .stepper-label { background: #e3e8d6; }
+
+  /* DONE TOGGLE */
+  .check {
+    height: 44px;
+    border: 1.5px solid var(--ink);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.05em;
+  }
+  .check:active { transform: scale(0.95); }
+  .set-row.done .check {
+    background: var(--ink);
+    color: var(--brass);
+  }
+  .strength .set-row.done .check {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+    color: #f5e4c8;
+  }
+
+  /* QUICK ACTIONS BAR */
+  .quick-actions {
+    display: flex;
+    gap: 6px;
+    padding: 6px 8px 0;
+    flex-wrap: wrap;
+  }
+  .qa-btn {
+    flex: 1;
+    background: transparent;
+    border: 1px dashed var(--line);
+    padding: 7px 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    min-width: 0;
+  }
+  .qa-btn:active { background: var(--ink); color: var(--brass); border-style: solid; }
+
+  /* NOTES */
+  .notes-block {
+    background: var(--bg-card);
+    border: 1px dashed var(--line);
+    padding: 10px 12px;
+    margin-top: 14px;
+  }
+  .notes-block .lbl {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-bottom: 4px;
+  }
+  .notes-block textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.4;
+    resize: vertical;
+    min-height: 50px;
+  }
+  .notes-block textarea:focus { outline: none; }
+
+  /* PR PILL (compact) */
+  .pr-strip {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 14px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 8px 10px;
+    align-items: center;
+  }
+  .pr-strip .lbl {
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    color: var(--brass);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .pr-strip .pr-cell {
+    flex: 1;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    border-left: 1px solid rgba(160, 133, 64, 0.25);
+    padding-left: 8px;
+  }
+  /* MODE SWITCHER */
+  .mode-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 14px;
+    border: 1px solid var(--ink);
+    background: var(--bg-card);
+  }
+  .mode-tab {
+    background: transparent;
+    border: none;
+    border-right: 1px solid var(--line-soft);
+    padding: 10px 8px 12px;
+    cursor: pointer;
+    text-align: center;
+    font-family: inherit;
+    transition: all 0.15s ease;
+  }
+  .mode-tab:last-child { border-right: none; }
+  .mode-tab .mode-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--ink);
+    display: block;
+  }
+  .mode-tab .mode-sub {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-top: 4px;
+    display: block;
+    line-height: 1.2;
+  }
+  .mode-tab.active { background: var(--ink); }
+  .mode-tab.active .mode-label { color: var(--bg); }
+  .mode-tab.active .mode-sub { color: var(--brass); }
+
+  /* SCHEDULE PEEK */
+  details.schedule-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-left: 4px solid var(--sage);
+    margin-bottom: 14px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+  details.schedule-card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 9px 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  details.schedule-card summary::-webkit-details-marker { display: none; }
+  details.schedule-card summary::after {
+    content: '+';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--sage);
+    line-height: 1;
+  }
+  details.schedule-card[open] summary::after { content: '−'; }
+  details.schedule-card summary span.tag {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    font-weight: 700;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+  }
+  .schedule-body {
+    padding: 4px 14px 12px;
+    border-top: 1px dashed var(--line-soft);
+  }
+  .schedule-row {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 10px;
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(184, 168, 136, 0.25);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .schedule-row:last-child { border-bottom: none; }
+  .schedule-row .day {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--burgundy);
+  }
+  .schedule-row .activity { color: var(--ink); font-weight: 500; }
+
+  /* MODE PROTOCOL */
+  .pr-strip .pr-cell:first-of-type { border-left: none; padding-left: 0; }
+
+  /* PROTOCOL PANEL */
+  details.protocol-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line-soft);
+    border-left: 4px solid var(--brass);
+    margin-bottom: 14px;
+    box-shadow: 0 1px 2px var(--shadow);
+  }
+  details.protocol-card summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  details.protocol-card summary::-webkit-details-marker { display: none; }
+  details.protocol-card summary::after {
+    content: '+';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--brass);
+    transition: transform 0.2s ease;
+    line-height: 1;
+  }
+  details.protocol-card[open] summary::after { content: '−'; }
+  details.protocol-card summary span.tag {
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+  }
+
+  .protocol-body {
+    padding: 4px 14px 16px;
+    border-top: 1px dashed var(--line-soft);
+  }
+  .protocol-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--burgundy);
+    margin: 14px 0 6px;
+    line-height: 1.1;
+  }
+  .protocol-body h4:first-child { margin-top: 10px; }
+  .protocol-body .rule {
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(184, 168, 136, 0.25);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .protocol-body .rule:last-child { border-bottom: none; }
+  .protocol-body .rule .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--burgundy);
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .protocol-body .rule strong { color: var(--ink); font-weight: 700; }
+  .protocol-body .scenario {
+    margin: 4px 0;
+    padding: 6px 10px;
+    background: rgba(160, 133, 64, 0.08);
+    border-left: 2px solid var(--brass);
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+  }
+  .protocol-body .scenario strong { color: var(--ink); }
+  .protocol-body .priority-list {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 12px 14px;
+    margin-top: 10px;
+  }
+  .protocol-body .priority-list .lbl {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: var(--brass);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .protocol-body .priority-list .lift {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(160, 133, 64, 0.2);
+  }
+  .protocol-body .priority-list .lift:last-child { border-bottom: none; }
+  .protocol-body .priority-list .lift em { color: var(--brass); font-style: italic; }
+
+  .pr-strip input {
+    background: transparent;
+    border: none;
+    color: var(--bg);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    width: 50px;
+    -moz-appearance: textfield;
+  }
+  .pr-strip input::-webkit-outer-spin-button,
+  .pr-strip input::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  .pr-strip input::placeholder { color: var(--ink-muted); }
+  .pr-strip input:focus { outline: none; }
+  .pr-strip .unit {
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    color: var(--brass);
+    font-weight: 700;
+  }
+
+  /* BOTTOM ACTIONS */
+  .actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+  .btn {
+    flex: 1;
+    background: transparent;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 11px 10px;
+    font-family: inherit;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .btn:active { background: var(--ink); color: var(--bg); }
+  .btn.danger { border-color: var(--burgundy); color: var(--burgundy); }
+  .btn.danger:active { background: var(--burgundy); color: var(--bg); }
+
+  /* SAVE PILL */
+  .save-pill {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--ink);
+    color: var(--brass);
+    padding: 8px 18px;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: all 0.25s ease;
+    z-index: 100;
+    pointer-events: none;
+  }
+  .save-pill.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* PROGRESS STRIP */
+  .progress-strip {
+    height: 2px;
+    background: var(--line-soft);
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .progress-strip .fill {
+    height: 100%;
+    background: var(--burgundy);
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+
+  @media (max-width: 380px) {
+    .stepper { grid-template-columns: 28px 1fr 28px; }
+    .stepper input { font-size: 16px; }
+    .set-row { grid-template-columns: 24px 1fr 1fr 50px; gap: 5px; }
+    .step-btn { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <header class="masthead">
+    <div class="eyebrow">Powerbuilding · iv · v2</div>
+    <h1 class="title">Lift <em>Log</em></h1>
+  </header>
+
+  <div class="progress-strip"><div class="fill" id="progressFill"></div></div>
+
+  <div class="mode-switch" id="modeSwitch"></div>
+
+  <details class="schedule-card" id="scheduleCard">
+    <summary><span id="scheduleSummary">Weekly schedule</span></summary>
+    <div class="schedule-body" id="scheduleBody"></div>
+  </details>
+
+  <div class="week-bar" id="weekBar"></div>
+
+  <div class="pr-strip">
+    <div class="lbl">Top sets</div>
+    <div class="pr-cell">
+      <input type="number" id="prBench" placeholder="—"><span class="unit">bench</span>
+    </div>
+    <div class="pr-cell">
+      <input type="number" id="prChin" placeholder="—"><span class="unit">chin</span>
+    </div>
+  </div>
+
+  <div class="day-tabs" id="dayTabs"></div>
+
+  <details class="protocol-card">
+    <summary><span>Missed a day? <span class="tag">Protocol</span></span></summary>
+    <div class="protocol-body">
+      <h4>The three rules</h4>
+      <div class="rule"><span class="num">i</span><span>Never combine two sessions into one. <strong>Don't double up.</strong></span></div>
+      <div class="rule"><span class="num">ii</span><span>Protect <strong>bench + weighted chin</strong> above all else. These are non-negotiable.</span></div>
+      <div class="rule"><span class="num">iii</span><span>Shift days back, don't stack them. Lose accessory work, never the priority lifts.</span></div>
+
+      <h4>Missed 1 day</h4>
+      <div class="scenario"><strong>Day 1 (bench):</strong> shift everything back by a day. Bench tomorrow. If it pushes the hybrid out, drop the hybrid.</div>
+      <div class="scenario"><strong>Day 2 (legs):</strong> skip it. One leg day this week is fine. Quad volume drops to maintenance, no real loss for your goals.</div>
+      <div class="scenario"><strong>Day 3 (pull):</strong> move weighted chin + 1 row + laterals to Day 4 hybrid (front-load it). Skip comp bench skill (it's just technique).</div>
+      <div class="scenario"><strong>Day 4 (hybrid):</strong> just skip. Lowest priority day. No make-up needed.</div>
+
+      <h4>Missed 2 days</h4>
+      <div class="scenario">Just hit Day 1 and Day 3 (the two upper days). Treat the rest of the week as an unplanned deload. Don't try to cram. Volume is reduced for one week, priorities maintained, you'll be fresher the following week. This is fine.</div>
+
+      <h4>Priority Session · 45 min</h4>
+      <div class="scenario">When time-crunched, ditch the full session. Run this template instead. Hits chest, shoulders, arms, and one priority lift. Zero fluff.</div>
+      <div class="priority-list">
+        <div class="lbl">The 4-Lift Salvage</div>
+        <div class="lift">1. Bench <em>4×5</em> &nbsp;<em>(or weighted chin 4×5 if benched recently)</em></div>
+        <div class="lift">2. Incline DB Press <em>3×10</em></div>
+        <div class="lift">3. Lateral Raise <em>3×15</em></div>
+        <div class="lift">4. Curl + Skullcrusher superset <em>3×12</em></div>
+      </div>
+
+      <h4>What you don't do</h4>
+      <div class="rule"><span class="num">×</span><span>Don't add an extra day to "make up" for the miss. You'll under-recover and the next week tanks.</span></div>
+      <div class="rule"><span class="num">×</span><span>Don't grind heavier weight to compensate. Same weights, same RPE, just shifted timing.</span></div>
+      <div class="rule"><span class="num">×</span><span>Don't beat yourself up. One week of reduced volume is a rounding error in a 3-month wave.</span></div>
+    </div>
+  </details>
+
+  <div id="workoutBody"></div>
+
+  <div class="actions">
+    <button class="btn" id="exportBtn">Export</button>
+    <button class="btn" id="prevWeekFillBtn">Fill from Wk-1</button>
+    <button class="btn danger" id="resetWeekBtn">Reset Week</button>
+  </div>
+
+</div>
+
+<div class="save-pill" id="savePill">Saved</div>
+
+<script>
+  // ============ PROGRAMS ============
+  const PROGRAMS = {
+    standard: {
+      label: "Standard",
+      sublabel: "no BJJ · 4 days",
+      schedule: "Mon · Tue · Thu · Fri · Sat",
+      scheduleLong: [
+        { day: "Mon", action: "Day 1 (Upper · Bench)" },
+        { day: "Tue", action: "Light jog 3-5 mi" },
+        { day: "Wed", action: "Day 2 (Legs)" },
+        { day: "Thu", action: "Rest" },
+        { day: "Fri", action: "Day 3 (Upper · Pull)" },
+        { day: "Sat", action: "Day 4 (Hybrid)" },
+        { day: "Sun", action: "Rest or jog" }
+      ],
+      days: {
+        1: {
+          name: "Bench Strength",
+          focus: "Upper",
+          exercises: [
+            { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "+5 lbs/wk. Miss reps 2x → deload." },
+            { name: "Weighted Chin-up", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8" },
+            { name: "Incline DB Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
+            { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
+            { name: "EZ Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset, no rest." }
+          ]
+        },
+        2: {
+          name: "Zercher Hypertrophy",
+          focus: "Lower",
+          exercises: [
+            { name: "Zercher Squat", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8", note: "Top of range → +5/10 lbs." },
+            { name: "Lying Leg Curl", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
+            { name: "Leg Press", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
+            { name: "Standing Calf Raise", sets: 4, reps: 10, repsLabel: "8-12", rpe: "9-10" },
+            { name: "Hanging Leg Raise", sets: 3, reps: 10, repsLabel: "10", rpe: "9" }
+          ]
+        },
+        3: {
+          name: "Pull Strength + Bench Skill",
+          focus: "Upper",
+          exercises: [
+            { name: "Weighted Pull-up", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "+2.5/5 lbs/wk." },
+            { name: "Comp Bench (technique)", sets: 4, reps: 3, repsLabel: "3", rpe: "6-7", strength: true, note: "Pause, light, bar speed." },
+            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9" },
+            { name: "DB Shoulder Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8-9" },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
+            { name: "Incline Curl + OH Tri Ext", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+          ]
+        },
+        4: {
+          name: "Hybrid · Legs + Upper",
+          focus: "Mixed",
+          exercises: [
+            { name: "Front Squat / Hack", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8" },
+            { name: "Romanian Deadlift", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
+            { name: "Seated Calf Raise", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9" },
+            { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8" },
+            { name: "Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9" },
+            { name: "Cable Lateral Raise", sets: 4, reps: 15, repsLabel: "15", rpe: "9-10" },
+            { name: "Hammer Curl + Rope Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset." }
+          ]
+        }
+      }
+    },
+    bjj: {
+      label: "BJJ Mode",
+      sublabel: "rolls 3x/wk · 4 lift days",
+      schedule: "Tue · Thu · Fri · Sat (opt)",
+      scheduleLong: [
+        { day: "Sun", action: "Rest (peak Mon)" },
+        { day: "Mon", action: "BJJ (priority)" },
+        { day: "Tue", action: "Day 1 (Upper · Pull)" },
+        { day: "Wed", action: "BJJ" },
+        { day: "Thu", action: "Day 2 (Legs · Zercher)" },
+        { day: "Fri", action: "Day 3 (Upper · Bench)" },
+        { day: "Sat", action: "Open mat AM + Day 4 PM (opt)" }
+      ],
+      days: {
+        1: {
+          name: "Pull Priority",
+          focus: "Upper",
+          exercises: [
+            { name: "Weighted Pull-up", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Priority lift. +2.5/5 lbs/wk." },
+            { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "First bench of the week. +5 lbs/wk." },
+            { name: "Incline DB Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
+            { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
+            { name: "EZ Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+          ]
+        },
+        2: {
+          name: "Zercher Hypertrophy",
+          focus: "Lower",
+          exercises: [
+            { name: "Zercher Squat", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8", note: "48hr from Wed BJJ + 48hr to Sat. Clean window." },
+            { name: "Lying Leg Curl", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8" },
+            { name: "Leg Press", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8" },
+            { name: "Standing Calf Raise", sets: 4, reps: 10, repsLabel: "8-12", rpe: "9-10" },
+            { name: "Hanging Leg Raise", sets: 3, reps: 10, repsLabel: "10", rpe: "9" }
+          ]
+        },
+        3: {
+          name: "Bench Priority",
+          focus: "Upper",
+          exercises: [
+            { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Second bench of the week. Heavy." },
+            { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8", note: "Replaces comp bench. More chest size." },
+            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Use straps. Spare grip for Sat open mat." },
+            { name: "DB Shoulder Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8-9" },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
+            { name: "Incline Curl + OH Tri Ext", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+          ]
+        },
+        4: {
+          name: "Hybrid · Optional",
+          focus: "Mixed",
+          exercises: [
+            { name: "Front Squat / Hack", sets: 3, reps: 11, repsLabel: "10-12", rpe: "7-8", note: "Optional day. Skip if cooked. Lighter RPE." },
+            { name: "Romanian Deadlift", sets: 3, reps: 9, repsLabel: "8-10", rpe: "7-8" },
+            { name: "Cable Lateral Raise", sets: 4, reps: 15, repsLabel: "15", rpe: "9-10" },
+            { name: "Hammer Curl + Rope Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset." }
+          ]
+        }
+      }
+    }
+  };
+
+  // Active program reference (updated when mode changes)
+  let PROGRAM = PROGRAMS.standard.days;
+
+  // ============ STATE ============
+  const STORAGE_KEY = "program-iv-log-v2";
+  let state = {
+    currentWeek: 1,
+    currentDay: 1,
+    mode: 'standard',  // 'standard' or 'bjj'
+    log: {},           // { "<mode>_w1d1_e0_s0": { weight, reps, done } }
+    notes: {},         // { "<mode>_w1d1": "..." }
+    pr: { bench: "", chin: "" },
+    collapsed: {},     // { "<mode>_w1d1_e0": true }
+    missedDays: {}     // { "<mode>": { "1": [2, 3], ... } }
+  };
+
+  // ============ STORAGE ============
+  // IndexedDB wrapper (more durable than localStorage on iOS)
+  const DB_NAME = 'program-iv';
+  const STORE_NAME = 'state';
+  let _dbPromise = null;
+
+  function openDB() {
+    if (_dbPromise) return _dbPromise;
+    _dbPromise = new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = e => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains(STORE_NAME)) {
+          db.createObjectStore(STORE_NAME);
+        }
+      };
+      req.onsuccess = e => resolve(e.target.result);
+      req.onerror = () => reject(req.error);
+    });
+    return _dbPromise;
+  }
+
+  async function dbSet(key, value) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, 'readwrite');
+      tx.objectStore(STORE_NAME).put(value, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  }
+
+  async function dbGet(key) {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE_NAME, 'readonly');
+      const req = tx.objectStore(STORE_NAME).get(key);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  let saveTimer = null;
+  function saveState() {
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(async () => {
+      try {
+        await dbSet('state', state);
+        flashSave();
+      } catch (err) { console.error("Save failed:", err); }
+    }, 200);
+  }
+
+  async function loadState() {
+    try {
+      // Migrate from localStorage if data exists there from older version
+      const oldRaw = localStorage.getItem(STORAGE_KEY);
+      if (oldRaw) {
+        try {
+          const oldParsed = JSON.parse(oldRaw);
+          await dbSet('state', oldParsed);
+          localStorage.removeItem(STORAGE_KEY);
+          console.log('Migrated data from localStorage to IndexedDB');
+        } catch (e) { /* ignore */ }
+      }
+
+      const saved = await dbGet('state');
+      if (saved) {
+        state = { ...state, ...saved };
+        if (!state.collapsed) state.collapsed = {};
+        if (!state.missedDays) state.missedDays = {};
+        if (!state.mode) state.mode = 'standard';
+        // Migrate pre-mode keys (w1d1...) to standard_w1d1...
+        const migrate = (obj) => {
+          const out = {};
+          let migrated = 0;
+          Object.keys(obj).forEach(k => {
+            if (/^w\d/.test(k)) {
+              out['standard_' + k] = obj[k];
+              migrated++;
+            } else {
+              out[k] = obj[k];
+            }
+          });
+          if (migrated > 0) console.log(`Migrated ${migrated} keys to standard mode`);
+          return out;
+        };
+        state.log = migrate(state.log);
+        state.notes = migrate(state.notes);
+        state.collapsed = migrate(state.collapsed);
+        // Migrate missedDays from old flat format to per-mode
+        if (Array.isArray(state.missedDays['1']) || Array.isArray(state.missedDays['2']) ||
+            Array.isArray(state.missedDays['3']) || Array.isArray(state.missedDays['4'])) {
+          state.missedDays = { standard: state.missedDays, bjj: {} };
+        }
+        if (!state.missedDays.standard) state.missedDays.standard = {};
+        if (!state.missedDays.bjj) state.missedDays.bjj = {};
+      }
+      // Always sync PROGRAM ref to current mode
+      PROGRAM = PROGRAMS[state.mode].days;
+    } catch (err) { console.error("Load failed:", err); }
+  }
+
+  function flashSave() {
+    const pill = document.getElementById("savePill");
+    pill.classList.add("show");
+    clearTimeout(window._savePillTO);
+    window._savePillTO = setTimeout(() => pill.classList.remove("show"), 800);
+  }
+
+  // ============ KEYS ============
+  const sessionKey = (w, d) => `${state.mode}_w${w || state.currentWeek}d${d || state.currentDay}`;
+  const exKey = (exIdx, w, d) => `${sessionKey(w, d)}_e${exIdx}`;
+  const setKey = (exIdx, setIdx, w, d) => `${exKey(exIdx, w, d)}_s${setIdx}`;
+  // Carryover/salvage exercises use a different key namespace so they don't collide with regular indices
+  const salvageKey = (exIdx, w, d) => `${sessionKey(w, d)}_c${exIdx}`;
+  const salvageSetKey = (exIdx, setIdx, w, d) => `${salvageKey(exIdx, w, d)}_s${setIdx}`;
+
+  // ============ MISSED DAY LOGIC ============
+  function isMissed(day, week) {
+    const w = week || state.currentWeek;
+    const modeMissed = state.missedDays[state.mode] || {};
+    return (modeMissed[w] || []).includes(day);
+  }
+
+  function toggleMissed(day) {
+    const w = state.currentWeek;
+    if (!state.missedDays[state.mode]) state.missedDays[state.mode] = {};
+    if (!state.missedDays[state.mode][w]) state.missedDays[state.mode][w] = [];
+    const arr = state.missedDays[state.mode][w];
+    const idx = arr.indexOf(day);
+    if (idx === -1) arr.push(day);
+    else arr.splice(idx, 1);
+    saveState();
+    renderAll();
+  }
+
+  // Returns salvage exercises that should be added/replace on the current day
+  // based on which other days were marked missed in the current week.
+  function getSalvagePlan() {
+    // { prepend: [exObj, ...], replaceIndices: { idx: exObj }, banner: string|null }
+    const plan = { prepend: [], replaceIndices: {}, banner: null };
+    const day = state.currentDay;
+    const program = PROGRAM[day];
+    if (!program) return plan;
+
+    // Day 3 missed → carry weighted pullup salvage to Day 4
+    if (day === 4 && isMissed(3) && !isMissed(4)) {
+      plan.prepend.push({
+        name: "Weighted Pull-up",
+        sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
+        strength: true,
+        salvageFrom: "Day 3"
+      });
+      plan.banner = "Day 3 missed this week. Weighted pull-up added as the priority salvage. Hit it first while fresh.";
+    }
+
+    // Day 1 missed → replace comp bench skill on Day 3 with priority bench
+    if (day === 3 && isMissed(1) && !isMissed(3)) {
+      const compBenchIdx = program.exercises.findIndex(e => e.name.toLowerCase().includes('comp bench'));
+      if (compBenchIdx !== -1) {
+        plan.replaceIndices[compBenchIdx] = {
+          name: "Barbell Bench (priority salvage)",
+          sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
+          strength: true,
+          note: "Replaces comp bench. Heavy work to recover bench progress.",
+          salvageFrom: "Day 1"
+        };
+      }
+      plan.banner = (plan.banner ? plan.banner + " " : "") + "Day 1 missed this week. Comp bench replaced with heavy bench 4×5 to keep bench progression alive.";
+    }
+
+    return plan;
+  }
+
+
+  // ============ HELPERS ============
+  // Find most recent week prior to current with data for this exercise
+  function getLastSession(exIdx) {
+    for (let w = state.currentWeek - 1; w >= 1; w--) {
+      const ex = PROGRAM[state.currentDay].exercises[exIdx];
+      const sets = [];
+      for (let s = 0; s < ex.sets; s++) {
+        const entry = state.log[setKey(exIdx, s, w, state.currentDay)];
+        if (entry && (entry.weight || entry.reps)) {
+          sets.push({ weight: entry.weight, reps: entry.reps, done: entry.done });
+        }
+      }
+      if (sets.length) return { week: w, sets };
+    }
+    return null;
+  }
+
+  function autoFillFromLast(exIdx) {
+    const last = getLastSession(exIdx);
+    if (!last) return false;
+    const ex = PROGRAM[state.currentDay].exercises[exIdx];
+    let filled = false;
+    for (let s = 0; s < ex.sets; s++) {
+      const k = setKey(exIdx, s);
+      if (!state.log[k]) state.log[k] = {};
+      // Don't overwrite existing data
+      if (!state.log[k].weight && last.sets[s] && last.sets[s].weight) {
+        state.log[k].weight = last.sets[s].weight;
+        filled = true;
+      }
+    }
+    if (filled) saveState();
+    return filled;
+  }
+
+  function applyWeightToAll(exIdx, weight) {
+    const ex = PROGRAM[state.currentDay].exercises[exIdx];
+    for (let s = 0; s < ex.sets; s++) {
+      const k = setKey(exIdx, s);
+      if (!state.log[k]) state.log[k] = {};
+      state.log[k].weight = weight;
+    }
+    saveState();
+    renderWorkout();
+  }
+
+  // ============ RENDER ============
+  function renderWeekBar() {
+    const bar = document.getElementById("weekBar");
+    bar.innerHTML = "";
+    [1,2,3,4].forEach(w => {
+      const isDeload = w === 4;
+      const pill = document.createElement("div");
+      pill.className = "week-pill" + (isDeload ? " deload" : "") + (state.currentWeek === w ? " active" : "");
+      pill.innerHTML = `<div class="num">${w}</div><div class="lbl">${isDeload ? "Deload" : "Wk"}</div>`;
+      pill.onclick = () => { state.currentWeek = w; renderAll(); saveState(); };
+      bar.appendChild(pill);
+    });
+  }
+
+  function renderDayTabs() {
+    const tabs = document.getElementById("dayTabs");
+    tabs.innerHTML = "";
+    [1,2,3,4].forEach(d => {
+      const btn = document.createElement("button");
+      const missed = isMissed(d);
+      btn.className = "day-tab" + (state.currentDay === d ? " active" : "") + (missed ? " missed" : "");
+      btn.innerHTML = `<span class="day-num">Day ${d}</span><span class="day-name">(${PROGRAM[d].focus})</span>`;
+      btn.onclick = () => { state.currentDay = d; renderAll(); saveState(); };
+      tabs.appendChild(btn);
+    });
+  }
+
+  // Helper to render a single exercise card. usesSalvageKeys=true for salvage exercises.
+  function renderExerciseCard(ex, exIdx, usesSalvageKeys) {
+    const idForKey = usesSalvageKeys ? salvageKey(exIdx) : exKey(exIdx);
+    const setKeyFn = usesSalvageKeys ? salvageSetKey : setKey;
+    const isCollapsed = state.collapsed[idForKey];
+    const last = usesSalvageKeys ? null : getLastSession(exIdx);
+
+    const setRows = [];
+    for (let s = 0; s < ex.sets; s++) {
+      const k = setKeyFn(exIdx, s);
+      const entry = state.log[k] || {};
+      const done = entry.done || false;
+      const weightVal = entry.weight ?? '';
+      const repsVal = entry.reps ?? '';
+      const repsPlaceholder = ex.reps;
+
+      setRows.push(`
+        <div class="set-row ${done ? 'done' : ''}" data-key="${k}">
+          <div class="set-num">${s + 1}</div>
+          <div class="stepper weight" data-stepper="weight" data-key="${k}">
+            <span class="stepper-label">lbs</span>
+            <button class="step-btn" data-step="-5">−</button>
+            <input type="number" inputmode="decimal" data-field="weight" data-key="${k}" value="${weightVal}" placeholder="—">
+            <button class="step-btn" data-step="5">+</button>
+          </div>
+          <div class="stepper reps" data-stepper="reps" data-key="${k}">
+            <span class="stepper-label">reps</span>
+            <button class="step-btn" data-step="-1">−</button>
+            <input type="number" inputmode="numeric" data-field="reps" data-key="${k}" value="${repsVal}" placeholder="${repsPlaceholder}">
+            <button class="step-btn" data-step="1">+</button>
+          </div>
+          <button class="check" data-key="${k}" data-ex-kind="${usesSalvageKeys ? 'salvage' : 'regular'}" data-ex-idx="${exIdx}">${done ? 'done' : 'mark'}</button>
+        </div>
+      `);
+    }
+
+    const lastDisplay = last
+      ? `<div class="last-session"><span class="lbl">Wk ${last.week}</span><span class="data">${last.sets.map(s => `${s.weight || '?'}×${s.reps || '?'}`).join(' · ')}</span></div>`
+      : '';
+
+    const cardClass = usesSalvageKeys ? 'salvage' : (ex.strength ? 'strength' : '');
+    const dataAction = usesSalvageKeys ? 'salvage' : 'regular';
+
+    return `
+      <div class="exercise ${cardClass} ${isCollapsed ? 'collapsed' : ''}" data-ex-id="${idForKey}">
+        <div class="ex-head" data-toggle="${idForKey}">
+          <div class="ex-name">
+            <span>${ex.name}</span>
+            <span class="chevron">▾</span>
+          </div>
+          <div class="ex-target">
+            <span><strong>${ex.sets}</strong>×<strong>${ex.repsLabel}</strong></span>
+            <span>RPE <strong>${ex.rpe}</strong></span>
+            ${ex.strength ? '<span class="tag">Strength</span>' : ''}
+          </div>
+          ${ex.note ? `<div class="ex-note">${ex.note}</div>` : ''}
+          ${lastDisplay}
+        </div>
+        <div class="sets-area">
+          ${setRows.join('')}
+          <div class="quick-actions">
+            <button class="qa-btn" data-action="fill-last" data-ex="${exIdx}" data-kind="${dataAction}">Use last wk weight</button>
+            <button class="qa-btn" data-action="copy-first" data-ex="${exIdx}" data-kind="${dataAction}">Copy set 1 → all</button>
+            <button class="qa-btn" data-action="check-all" data-ex="${exIdx}" data-kind="${dataAction}">Mark all done</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderWorkout() {
+    const body = document.getElementById("workoutBody");
+    const day = PROGRAM[state.currentDay];
+    const isDeload = state.currentWeek === 4;
+    const dayMissed = isMissed(state.currentDay);
+    const titleParts = day.name.split(" ");
+    const titleEm = titleParts.pop();
+    const titleStart = titleParts.join(" ");
+
+    let html = `
+      <div class="session-header">
+        <div class="focus">Day ${state.currentDay} · Week ${state.currentWeek}${isDeload ? " · Deload" : ""}${dayMissed ? " · Missed" : ""}</div>
+        <h2>${titleStart} <em>${titleEm}</em></h2>
+        <button class="day-skip-btn ${dayMissed ? 'is-skipped' : ''}" id="daySkipBtn">${dayMissed ? 'Skipped' : 'Skip day'}</button>
+      </div>
+    `;
+
+    // If current day is marked missed, show the skip notice and stop
+    if (dayMissed) {
+      const skipMessages = {
+        1: { title: "Day 1 <em>missed</em>", body: "Bench is your priority lift. Recommended action: shift everything back a day, or run the Priority Session today (see protocol). Day 3 will auto-replace comp bench with heavy bench 4×5 to keep bench progression alive." },
+        2: { title: "Day 2 <em>skipped</em>", body: "Skipping legs once is fine. Quad volume drops to maintenance for the week. Hybrid day still has front squat + RDL so legs aren't completely off." },
+        3: { title: "Day 3 <em>missed</em>", body: "Pull priority. Day 4 hybrid will auto-add weighted pull-up 4×5 as a salvage lift. Tap Day 4 to see it." },
+        4: { title: "Day 4 <em>skipped</em>", body: "Lowest priority day. No make-up needed. Move on to next week clean." }
+      };
+      const msg = skipMessages[state.currentDay];
+      html += `
+        <div class="skip-notice">
+          <div class="head">Day Skipped</div>
+          <h3>${msg.title}</h3>
+          <p>${msg.body}</p>
+          <button class="restore-btn" id="restoreDayBtn">Un-skip this day</button>
+        </div>
+      `;
+      body.innerHTML = html;
+      const restoreBtn = document.getElementById('restoreDayBtn');
+      if (restoreBtn) restoreBtn.onclick = () => toggleMissed(state.currentDay);
+      const skipBtn = document.getElementById('daySkipBtn');
+      if (skipBtn) skipBtn.onclick = () => toggleMissed(state.currentDay);
+      updateProgressBar();
+      return;
+    }
+
+    if (isDeload) {
+      html += `<div class="deload-banner"><strong>Deload</strong> · top sets ~10% lighter, half the accessory volume, full ROM, recover.</div>`;
+    }
+
+    // Apply salvage plan based on missed days in current week
+    const salvagePlan = getSalvagePlan();
+    if (salvagePlan.banner) {
+      html += `<div class="carryover-banner"><strong>Auto-adjusted this week</strong>${salvagePlan.banner}</div>`;
+    }
+
+    // Render salvage (carryover) exercises first
+    salvagePlan.prepend.forEach((ex, sIdx) => {
+      html += renderExerciseCard(ex, sIdx, true);
+    });
+
+    // Render regular exercises, applying replacements
+    day.exercises.forEach((ex, exIdx) => {
+      const replacement = salvagePlan.replaceIndices[exIdx];
+      const renderedEx = replacement || ex;
+      // If it's a replacement, mark as salvage visually but use regular exercise key namespace
+      // (so original exercise data is preserved underneath but salvage prescription is shown)
+      if (replacement) {
+        // Use a tweaked render that shows salvage styling but stores under regular key
+        // Easiest: temporarily mark it as salvage-styled but keep regular keys
+        const card = renderExerciseCard(renderedEx, exIdx, false);
+        // Add salvage class via post-processing
+        html += card.replace('class="exercise ', 'class="exercise salvage ');
+      } else {
+        html += renderExerciseCard(ex, exIdx, false);
+      }
+    });
+
+    const noteVal = state.notes[sessionKey()] || "";
+    html += `
+      <div class="notes-block">
+        <div class="lbl">Session notes</div>
+        <textarea id="sessionNotes" placeholder="bar speed, sleep, anything off, anything that worked...">${noteVal}</textarea>
+      </div>
+    `;
+
+    body.innerHTML = html;
+    attachHandlers();
+    updateProgressBar();
+  }
+
+  function attachHandlers() {
+    // In-day skip button
+    const skipBtn = document.getElementById('daySkipBtn');
+    if (skipBtn) skipBtn.onclick = () => toggleMissed(state.currentDay);
+
+    // Stepper buttons
+    document.querySelectorAll('.step-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const stepper = btn.closest('.stepper');
+        const input = stepper.querySelector('input');
+        const step = parseFloat(btn.dataset.step);
+        const k = input.dataset.key;
+        const field = input.dataset.field;
+        const cur = parseFloat(input.value || (field === 'reps' ? input.placeholder : '0')) || 0;
+        let next = cur + step;
+        if (next < 0) next = 0;
+        if (field === 'weight') next = Math.round(next * 4) / 4; // 0.25 precision
+        input.value = next;
+        if (!state.log[k]) state.log[k] = {};
+        state.log[k][field] = next;
+        saveState();
+      });
+    });
+
+    // Inputs (manual edit)
+    document.querySelectorAll('input[data-field]').forEach(inp => {
+      inp.addEventListener('change', e => {
+        const k = e.target.dataset.key;
+        const field = e.target.dataset.field;
+        if (!state.log[k]) state.log[k] = {};
+        state.log[k][field] = e.target.value === '' ? null : parseFloat(e.target.value);
+        saveState();
+      });
+      // Select all on focus for fast overwrite
+      inp.addEventListener('focus', e => e.target.select());
+    });
+
+    // Done buttons
+    document.querySelectorAll('.check').forEach(box => {
+      box.addEventListener('click', e => {
+        e.stopPropagation();
+        const k = e.currentTarget.dataset.key;
+        const kind = e.currentTarget.dataset.exKind;
+        const exIdx = parseInt(e.currentTarget.dataset.exIdx);
+        if (!state.log[k]) state.log[k] = {};
+        state.log[k].done = !state.log[k].done;
+        // If marking done and reps empty, fill with target
+        if (state.log[k].done && !state.log[k].reps) {
+          let targetReps;
+          if (kind === 'salvage') {
+            const plan = getSalvagePlan();
+            targetReps = plan.prepend[exIdx]?.reps;
+          } else {
+            const plan = getSalvagePlan();
+            const replacement = plan.replaceIndices[exIdx];
+            const ex = replacement || PROGRAM[state.currentDay].exercises[exIdx];
+            targetReps = ex.reps;
+          }
+          if (targetReps) state.log[k].reps = targetReps;
+        }
+        renderWorkout();
+      });
+    });
+
+    // Notes
+    const notes = document.getElementById('sessionNotes');
+    if (notes) {
+      notes.addEventListener('input', e => {
+        state.notes[sessionKey()] = e.target.value;
+        saveState();
+      });
+    }
+
+    // Collapse toggles
+    document.querySelectorAll('[data-toggle]').forEach(el => {
+      el.addEventListener('click', e => {
+        const exId = el.dataset.toggle;
+        state.collapsed[exId] = !state.collapsed[exId];
+        const card = document.querySelector(`[data-ex-id="${exId}"]`);
+        card.classList.toggle('collapsed');
+        saveState();
+      });
+    });
+
+    // Quick actions
+    document.querySelectorAll('.qa-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const action = btn.dataset.action;
+        const exIdx = parseInt(btn.dataset.ex);
+        const kind = btn.dataset.kind || 'regular';
+        const isSalvage = kind === 'salvage';
+        const keyFn = isSalvage ? salvageSetKey : setKey;
+        const plan = getSalvagePlan();
+        const ex = isSalvage
+          ? plan.prepend[exIdx]
+          : (plan.replaceIndices[exIdx] || PROGRAM[state.currentDay].exercises[exIdx]);
+
+        if (action === 'fill-last') {
+          if (isSalvage) {
+            btn.textContent = 'Salvage: no history';
+            setTimeout(() => btn.textContent = 'Use last wk weight', 1200);
+            return;
+          }
+          const filled = autoFillFromLast(exIdx);
+          if (!filled) {
+            btn.textContent = 'No prior data';
+            setTimeout(() => btn.textContent = 'Use last wk weight', 1200);
+            return;
+          }
+          renderWorkout();
+        }
+
+        if (action === 'copy-first') {
+          const k0 = keyFn(exIdx, 0);
+          const w = state.log[k0]?.weight;
+          if (!w) {
+            btn.textContent = 'Set 1 empty';
+            setTimeout(() => btn.textContent = 'Copy set 1 → all', 1200);
+            return;
+          }
+          for (let s = 0; s < ex.sets; s++) {
+            const k = keyFn(exIdx, s);
+            if (!state.log[k]) state.log[k] = {};
+            state.log[k].weight = w;
+          }
+          saveState();
+          renderWorkout();
+        }
+
+        if (action === 'check-all') {
+          for (let s = 0; s < ex.sets; s++) {
+            const k = keyFn(exIdx, s);
+            if (!state.log[k]) state.log[k] = {};
+            state.log[k].done = true;
+            if (!state.log[k].reps) state.log[k].reps = ex.reps;
+          }
+          saveState();
+          renderWorkout();
+        }
+      });
+    });
+  }
+
+  function updateProgressBar() {
+    const fill = document.getElementById('progressFill');
+    if (isMissed(state.currentDay)) {
+      fill.style.width = '0%';
+      return;
+    }
+    const day = PROGRAM[state.currentDay];
+    const plan = getSalvagePlan();
+    let total = 0, done = 0;
+    // Salvage exercises
+    plan.prepend.forEach((ex, sIdx) => {
+      for (let s = 0; s < ex.sets; s++) {
+        total++;
+        if (state.log[salvageSetKey(sIdx, s)]?.done) done++;
+      }
+    });
+    // Regular exercises (replacements use same key namespace as regular)
+    day.exercises.forEach((ex, exIdx) => {
+      const replacement = plan.replaceIndices[exIdx];
+      const effective = replacement || ex;
+      for (let s = 0; s < effective.sets; s++) {
+        total++;
+        if (state.log[setKey(exIdx, s)]?.done) done++;
+      }
+    });
+    fill.style.width = (total ? (done / total) * 100 : 0) + '%';
+  }
+
+  function renderPR() {
+    document.getElementById('prBench').value = state.pr.bench || '';
+    document.getElementById('prChin').value = state.pr.chin || '';
+    document.getElementById('prBench').addEventListener('change', e => {
+      state.pr.bench = e.target.value; saveState();
+    });
+    document.getElementById('prChin').addEventListener('change', e => {
+      state.pr.chin = e.target.value; saveState();
+    });
+  }
+
+  function setMode(modeKey) {
+    if (state.mode === modeKey) return;
+    state.mode = modeKey;
+    PROGRAM = PROGRAMS[modeKey].days;
+    state.currentDay = 1;
+    saveState();
+    renderAll();
+  }
+
+  function renderModeSwitch() {
+    const el = document.getElementById('modeSwitch');
+    el.innerHTML = '';
+    Object.keys(PROGRAMS).forEach(modeKey => {
+      const m = PROGRAMS[modeKey];
+      const btn = document.createElement('button');
+      btn.className = 'mode-tab' + (state.mode === modeKey ? ' active' : '');
+      btn.innerHTML = `<span class="mode-label">${m.label}</span><span class="mode-sub">${m.sublabel}</span>`;
+      btn.onclick = () => setMode(modeKey);
+      el.appendChild(btn);
+    });
+  }
+
+  function renderSchedule() {
+    const m = PROGRAMS[state.mode];
+    document.getElementById('scheduleSummary').innerHTML =
+      `Weekly schedule <span class="tag">${m.label}</span>`;
+    const body = document.getElementById('scheduleBody');
+    body.innerHTML = m.scheduleLong.map(row =>
+      `<div class="schedule-row"><div class="day">${row.day}</div><div class="activity">${row.action}</div></div>`
+    ).join('');
+  }
+
+  function renderAll() {
+    renderModeSwitch();
+    renderSchedule();
+    renderWeekBar();
+    renderDayTabs();
+    renderWorkout();
+  }
+
+  // ============ ACTIONS ============
+  document.getElementById('resetWeekBtn').addEventListener('click', () => {
+    if (!confirm(`Reset all data for ${PROGRAMS[state.mode].label} Week ${state.currentWeek}?`)) return;
+    const prefix = `${state.mode}_w${state.currentWeek}d`;
+    Object.keys(state.log).forEach(k => {
+      if (k.startsWith(prefix)) delete state.log[k];
+    });
+    Object.keys(state.notes).forEach(k => {
+      if (k.startsWith(prefix)) delete state.notes[k];
+    });
+    saveState();
+    renderAll();
+  });
+
+  document.getElementById('prevWeekFillBtn').addEventListener('click', () => {
+    if (state.currentWeek === 1) {
+      alert("No previous week to pull from. You're in week 1.");
+      return;
+    }
+    const day = PROGRAM[state.currentDay];
+    let filledCount = 0;
+    day.exercises.forEach((ex, exIdx) => {
+      for (let s = 0; s < ex.sets; s++) {
+        const curK = setKey(exIdx, s);
+        const prevK = setKey(exIdx, s, state.currentWeek - 1, state.currentDay);
+        const prev = state.log[prevK];
+        if (prev?.weight && !state.log[curK]?.weight) {
+          if (!state.log[curK]) state.log[curK] = {};
+          state.log[curK].weight = prev.weight;
+          filledCount++;
+        }
+      }
+    });
+    saveState();
+    renderWorkout();
+    if (!filledCount) alert("Nothing to fill — already populated or no data in previous week.");
+  });
+
+  document.getElementById('exportBtn').addEventListener('click', () => {
+    const lines = ["PROGRAM IV — Lift Log\n"];
+    lines.push(`Bench top: ${state.pr.bench || '—'} lbs · Chin top: ${state.pr.chin || '—'} lbs\n`);
+    Object.keys(PROGRAMS).forEach(modeKey => {
+      const modeProgram = PROGRAMS[modeKey];
+      let modeHasAny = false;
+      const modeLines = [`\n\n████ ${modeProgram.label.toUpperCase()} (${modeProgram.sublabel}) ████`];
+      [1,2,3,4].forEach(w => {
+        modeLines.push(`\n=== WEEK ${w}${w === 4 ? ' (DELOAD)' : ''} ===`);
+        let weekHasAny = false;
+        [1,2,3,4].forEach(d => {
+          const day = modeProgram.days[d];
+          const sk = `${modeKey}_w${w}d${d}`;
+          const hasData = day.exercises.some((ex, exIdx) => {
+            for (let s = 0; s < ex.sets; s++) {
+              if (state.log[`${sk}_e${exIdx}_s${s}`]) return true;
+            }
+            return false;
+          });
+          if (!hasData && !state.notes[sk]) return;
+          weekHasAny = true;
+          modeLines.push(`\n--- Day ${d}: ${day.name} ---`);
+          day.exercises.forEach((ex, exIdx) => {
+            const setStrs = [];
+            for (let s = 0; s < ex.sets; s++) {
+              const e = state.log[`${sk}_e${exIdx}_s${s}`];
+              if (e && (e.weight || e.reps)) {
+                setStrs.push(`${e.weight || '?'}×${e.reps || '?'}${e.done ? '✓' : ''}`);
+              }
+            }
+            if (setStrs.length) {
+              modeLines.push(`${ex.name}: ${setStrs.join(' · ')}`);
+            }
+          });
+          if (state.notes[sk]) modeLines.push(`> ${state.notes[sk]}`);
+        });
+        if (weekHasAny) modeHasAny = true;
+      });
+      if (modeHasAny) lines.push(...modeLines);
+    });
+    const blob = new Blob([lines.join('\n')], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `program-iv-${new Date().toISOString().split('T')[0]}.txt`;
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+
+  // ============ INIT ============
+  (async () => {
+    await loadState();
+    renderAll();
+    renderPR();
+  })();
+
+</script>
+</body>
+</html>
