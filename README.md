@@ -5,7 +5,7 @@ Personal powerbuilding tracker. 4-day Upper/Lower split with Standard and BJJ mo
 **Live:** https://cheetostain.github.io/liftlog/
 
 ## Features
-- Two program modes: Standard (no BJJ) and BJJ Mode (rolls 3x/wk). Assumes you're a natty and dialed in with 8+ hours sleep, maintenance calories, and 0.7g protein per lb bodyweight.
+- Two program modes: Standard (no BJJ) and BJJ Mode (rolls 3x/wk). Assumes you're natty and dialed in with 8+ hours sleep, maintenance calories, and 0.7g protein per lb bodyweight.
 - Per-set logging with stepper buttons
 - Auto-fill from last week's weights
 - Mark-day-missed with automatic salvage exercise injection
