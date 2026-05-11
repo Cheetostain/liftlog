@@ -34,7 +34,8 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
   input, textarea { user-select: text; }
-  button { color: inherit; }
+  button { color: inherit; touch-action: manipulation; }
+  .step-btn, .check, .qa-btn, .day-tab, .week-pill, .mode-tab, .day-skip-btn, .btn { touch-action: manipulation; }
 
   html, body {
     background: var(--bg);
@@ -416,7 +417,7 @@
 
   /* SETS */
   .sets-area {
-    padding: 6px 8px 10px;
+    padding: 6px 0 10px;
   }
 
   .set-row {
@@ -424,11 +425,11 @@
     grid-template-columns: 28px 1fr 1fr 56px;
     gap: 6px;
     align-items: center;
-    padding: 6px 0;
-    border-bottom: 1px solid rgba(184, 168, 136, 0.25);
+    padding: 8px 12px;
   }
-  .set-row:last-child { border-bottom: none; }
-  .set-row.done { background: rgba(90, 107, 63, 0.07); }
+  .set-row:nth-child(even) { background: rgba(31, 22, 17, 0.04); }
+  .set-row.done { background: rgba(90, 107, 63, 0.1); }
+  .set-row.done:nth-child(even) { background: rgba(90, 107, 63, 0.14); }
 
   .set-num {
     font-family: 'Cormorant Garamond', serif;
@@ -539,7 +540,7 @@
   .quick-actions {
     display: flex;
     gap: 6px;
-    padding: 6px 8px 0;
+    padding: 10px 12px 0;
     flex-wrap: wrap;
   }
   .qa-btn {
@@ -913,10 +914,154 @@
     transition: width 0.3s ease;
   }
 
+  /* SUPERSET ROW (two-lift logging in one set) */
+  .set-row.superset-row {
+    grid-template-columns: 28px 1fr 56px;
+    align-items: center;
+    padding: 10px 12px;
+  }
+  .set-row.superset-row .check {
+    height: 120px;
+    align-self: center;
+    font-size: 14px;
+  }
+  .superset-pair {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .ss-lift {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .ss-lbl {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    padding-left: 2px;
+    line-height: 1;
+  }
+  .ss-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .ss-inputs .stepper { height: 36px; }
+  .ss-inputs .stepper input { font-size: 15px; }
+  .ss-inputs .stepper input::placeholder { font-size: 11px; opacity: 0.5; }
+
+  /* EDIT EXERCISE BUTTON (lowkey, in ex-target row) */
+  .ex-edit-btn {
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    padding: 0 2px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink-muted);
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    text-transform: lowercase;
+    opacity: 0.65;
+    transition: opacity 0.15s ease;
+  }
+  .ex-edit-btn:hover, .ex-edit-btn:active { opacity: 1; color: var(--burgundy); }
+
+  /* EDIT MODAL */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(31, 22, 17, 0.55);
+    z-index: 200;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+  .modal-backdrop.show { display: flex; }
+  .modal {
+    background: var(--bg-card);
+    border: 1px solid var(--ink);
+    max-width: 380px;
+    width: 100%;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    box-shadow: 0 8px 32px rgba(31, 22, 17, 0.3);
+  }
+  .modal-header {
+    padding: 14px 16px 12px;
+    border-bottom: 1px solid var(--line);
+  }
+  .modal-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    color: var(--brass-deep);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+  .modal-title em { font-style: italic; color: var(--burgundy); }
+  .modal-body {
+    padding: 14px 16px 16px;
+  }
+  .modal-field {
+    margin-bottom: 12px;
+  }
+  .modal-field label {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 0.25em;
+    font-weight: 700;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .modal-field input {
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid var(--line-soft);
+    padding: 10px 12px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    -moz-appearance: textfield;
+  }
+  .modal-field input:focus {
+    outline: none;
+    border-color: var(--burgundy);
+    background: rgba(255,255,255,0.8);
+  }
+  .modal-field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .modal-actions {
+    display: flex;
+    gap: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--line-soft);
+    margin-top: 10px;
+  }
+  .modal-actions .btn { padding: 10px; font-size: 9px; }
+  .modal-actions .btn.reset { border-color: var(--line); color: var(--ink-muted); }
+
   @media (max-width: 380px) {
     .stepper { grid-template-columns: 28px 1fr 28px; }
     .stepper input { font-size: 16px; }
     .set-row { grid-template-columns: 24px 1fr 1fr 50px; gap: 5px; }
+    .set-row.superset-row { grid-template-columns: 24px 1fr 50px; }
     .step-btn { font-size: 16px; }
   }
 </style>
@@ -999,6 +1144,46 @@
 
 <div class="save-pill" id="savePill">Saved</div>
 
+<div class="modal-backdrop" id="editModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-eyebrow">Edit exercise</div>
+      <div class="modal-title" id="editModalTitle">—</div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-field">
+        <label>Name</label>
+        <input type="text" id="editName" placeholder="Exercise name">
+      </div>
+      <div class="modal-field-row">
+        <div class="modal-field">
+          <label>Sets</label>
+          <input type="number" id="editSets" inputmode="numeric" min="1" max="10">
+        </div>
+        <div class="modal-field">
+          <label>Reps</label>
+          <input type="text" id="editReps" placeholder="e.g. 8-10">
+        </div>
+      </div>
+      <div class="modal-field-row">
+        <div class="modal-field">
+          <label>RPE</label>
+          <input type="text" id="editRpe" placeholder="e.g. 7-8">
+        </div>
+        <div class="modal-field">
+          <label>Note</label>
+          <input type="text" id="editNote" placeholder="(optional)">
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn reset" id="editResetBtn">Reset</button>
+        <button class="btn" id="editCancelBtn">Cancel</button>
+        <button class="btn" id="editSaveBtn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
   // ============ PROGRAMS ============
   const PROGRAMS = {
@@ -1025,7 +1210,7 @@
             { name: "Incline DB Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
             { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
             { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "EZ Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset, no rest." }
+            { name: "Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset, no rest between movements.", superset: ["EZ Curl", "Skullcrusher"] }
           ]
         },
         2: {
@@ -1048,7 +1233,7 @@
             { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9" },
             { name: "DB Shoulder Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8-9" },
             { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "Incline Curl + OH Tri Ext", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+            { name: "Curl + Tri Extension", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["Incline Curl", "OH Tri Extension"] }
           ]
         },
         4: {
@@ -1061,7 +1246,7 @@
             { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8" },
             { name: "Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9" },
             { name: "Cable Lateral Raise", sets: 4, reps: 15, repsLabel: "15", rpe: "9-10" },
-            { name: "Hammer Curl + Rope Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset." }
+            { name: "Hammer Curl + Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset.", superset: ["Hammer Curl", "Rope Pushdown"] }
           ]
         }
       }
@@ -1086,10 +1271,10 @@
           exercises: [
             { name: "Weighted Pull-up", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Priority lift. +2.5/5 lbs/wk." },
             { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "First bench of the week. +5 lbs/wk." },
+            { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9", note: "Pull break between bench and incline." },
             { name: "Incline DB Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
-            { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9" },
             { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "EZ Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+            { name: "Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["EZ Curl", "Skullcrusher"] }
           ]
         },
         2: {
@@ -1108,11 +1293,11 @@
           focus: "Upper",
           exercises: [
             { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Second bench of the week. Heavy." },
-            { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8", note: "Replaces comp bench. More chest size." },
-            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Use straps. Spare grip for Sat open mat." },
+            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Use straps. Spare grip for Sat open mat. Recovery between bench and dip." },
+            { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8", note: "Tris ~5min recovered from bench. Heavier load possible now." },
             { name: "DB Shoulder Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8-9" },
             { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "Incline Curl + OH Tri Ext", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset." }
+            { name: "Curl + Tri Extension", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["Incline Curl", "OH Tri Extension"] }
           ]
         },
         4: {
@@ -1122,7 +1307,7 @@
             { name: "Front Squat / Hack", sets: 3, reps: 11, repsLabel: "10-12", rpe: "7-8", note: "Optional day. Skip if cooked. Lighter RPE." },
             { name: "Romanian Deadlift", sets: 3, reps: 9, repsLabel: "8-10", rpe: "7-8" },
             { name: "Cable Lateral Raise", sets: 4, reps: 15, repsLabel: "15", rpe: "9-10" },
-            { name: "Hammer Curl + Rope Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset." }
+            { name: "Hammer Curl + Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset.", superset: ["Hammer Curl", "Rope Pushdown"] }
           ]
         }
       }
@@ -1142,7 +1327,8 @@
     notes: {},         // { "<mode>_w1d1": "..." }
     pr: { bench: "", chin: "" },
     collapsed: {},     // { "<mode>_w1d1_e0": true }
-    missedDays: {}     // { "<mode>": { "1": [2, 3], ... } }
+    missedDays: {},    // { "<mode>": { "1": [2, 3], ... } }
+    exerciseOverrides: {} // { "<mode>_d1": { 0: { name, sets, repsLabel, rpe } } }
   };
 
   // ============ STORAGE ============
@@ -1242,6 +1428,7 @@
         }
         if (!state.missedDays.standard) state.missedDays.standard = {};
         if (!state.missedDays.bjj) state.missedDays.bjj = {};
+        if (!state.exerciseOverrides) state.exerciseOverrides = {};
       }
       // Always sync PROGRAM ref to current mode
       PROGRAM = PROGRAMS[state.mode].days;
@@ -1326,10 +1513,17 @@
   function getLastSession(exIdx) {
     for (let w = state.currentWeek - 1; w >= 1; w--) {
       const ex = PROGRAM[state.currentDay].exercises[exIdx];
+      const isSS = Array.isArray(ex.superset) && ex.superset.length === 2;
       const sets = [];
       for (let s = 0; s < ex.sets; s++) {
         const entry = state.log[setKey(exIdx, s, w, state.currentDay)];
-        if (entry && (entry.weight || entry.reps)) {
+        if (!entry) continue;
+        if (isSS) {
+          if (entry.weightA || entry.repsA || entry.weightB || entry.repsB) {
+            // For superset display, just show first lift's data as primary
+            sets.push({ weight: entry.weightA, reps: entry.repsA, done: entry.done });
+          }
+        } else if (entry.weight || entry.reps) {
           sets.push({ weight: entry.weight, reps: entry.reps, done: entry.done });
         }
       }
@@ -1394,40 +1588,101 @@
     });
   }
 
+  // Get effective exercise definition, applying any per-day customizations from state.exerciseOverrides
+  function getEffectiveEx(ex, exIdx) {
+    const dayKey = `${state.mode}_d${state.currentDay}`;
+    const overrides = state.exerciseOverrides?.[dayKey]?.[exIdx];
+    if (!overrides) return ex;
+    return { ...ex, ...overrides };
+  }
+
   // Helper to render a single exercise card. usesSalvageKeys=true for salvage exercises.
-  function renderExerciseCard(ex, exIdx, usesSalvageKeys) {
+  function renderExerciseCard(rawEx, exIdx, usesSalvageKeys) {
+    const ex = usesSalvageKeys ? rawEx : getEffectiveEx(rawEx, exIdx);
     const idForKey = usesSalvageKeys ? salvageKey(exIdx) : exKey(exIdx);
     const setKeyFn = usesSalvageKeys ? salvageSetKey : setKey;
     const isCollapsed = state.collapsed[idForKey];
     const last = usesSalvageKeys ? null : getLastSession(exIdx);
+    const isSuperset = Array.isArray(ex.superset) && ex.superset.length === 2;
 
     const setRows = [];
     for (let s = 0; s < ex.sets; s++) {
       const k = setKeyFn(exIdx, s);
       const entry = state.log[k] || {};
       const done = entry.done || false;
-      const weightVal = entry.weight ?? '';
-      const repsVal = entry.reps ?? '';
       const repsPlaceholder = ex.reps;
 
-      setRows.push(`
-        <div class="set-row ${done ? 'done' : ''}" data-key="${k}">
-          <div class="set-num">${s + 1}</div>
-          <div class="stepper weight" data-stepper="weight" data-key="${k}">
-            <span class="stepper-label">lbs</span>
-            <button class="step-btn" data-step="-5">−</button>
-            <input type="number" inputmode="decimal" data-field="weight" data-key="${k}" value="${weightVal}" placeholder="—">
-            <button class="step-btn" data-step="5">+</button>
+      if (isSuperset) {
+        // Two stacked rows (lift A, lift B) sharing one set number and one mark button
+        const wA = entry.weightA ?? '';
+        const rA = entry.repsA ?? '';
+        const wB = entry.weightB ?? '';
+        const rB = entry.repsB ?? '';
+        setRows.push(`
+          <div class="set-row superset-row ${done ? 'done' : ''}" data-key="${k}">
+            <div class="set-num">${s + 1}</div>
+            <div class="superset-pair">
+              <div class="ss-lift">
+                <div class="ss-lbl">${ex.superset[0]}</div>
+                <div class="ss-inputs">
+                  <div class="stepper weight">
+                    <span class="stepper-label">lbs</span>
+                    <button class="step-btn" data-step="-5" data-target="weightA" data-key="${k}">−</button>
+                    <input type="number" inputmode="decimal" data-field="weightA" data-key="${k}" value="${wA}" placeholder="—">
+                    <button class="step-btn" data-step="5" data-target="weightA" data-key="${k}">+</button>
+                  </div>
+                  <div class="stepper reps">
+                    <span class="stepper-label">reps</span>
+                    <button class="step-btn" data-step="-1" data-target="repsA" data-key="${k}">−</button>
+                    <input type="number" inputmode="numeric" data-field="repsA" data-key="${k}" value="${rA}" placeholder="${repsPlaceholder}">
+                    <button class="step-btn" data-step="1" data-target="repsA" data-key="${k}">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="ss-lift">
+                <div class="ss-lbl">${ex.superset[1]}</div>
+                <div class="ss-inputs">
+                  <div class="stepper weight">
+                    <span class="stepper-label">lbs</span>
+                    <button class="step-btn" data-step="-5" data-target="weightB" data-key="${k}">−</button>
+                    <input type="number" inputmode="decimal" data-field="weightB" data-key="${k}" value="${wB}" placeholder="—">
+                    <button class="step-btn" data-step="5" data-target="weightB" data-key="${k}">+</button>
+                  </div>
+                  <div class="stepper reps">
+                    <span class="stepper-label">reps</span>
+                    <button class="step-btn" data-step="-1" data-target="repsB" data-key="${k}">−</button>
+                    <input type="number" inputmode="numeric" data-field="repsB" data-key="${k}" value="${rB}" placeholder="${repsPlaceholder}">
+                    <button class="step-btn" data-step="1" data-target="repsB" data-key="${k}">+</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="check" data-key="${k}" data-ex-kind="${usesSalvageKeys ? 'salvage' : 'regular'}" data-ex-idx="${exIdx}">${done ? 'done' : 'mark'}</button>
           </div>
-          <div class="stepper reps" data-stepper="reps" data-key="${k}">
-            <span class="stepper-label">reps</span>
-            <button class="step-btn" data-step="-1">−</button>
-            <input type="number" inputmode="numeric" data-field="reps" data-key="${k}" value="${repsVal}" placeholder="${repsPlaceholder}">
-            <button class="step-btn" data-step="1">+</button>
+        `);
+      } else {
+        // Standard single-lift row
+        const weightVal = entry.weight ?? '';
+        const repsVal = entry.reps ?? '';
+        setRows.push(`
+          <div class="set-row ${done ? 'done' : ''}" data-key="${k}">
+            <div class="set-num">${s + 1}</div>
+            <div class="stepper weight" data-stepper="weight" data-key="${k}">
+              <span class="stepper-label">lbs</span>
+              <button class="step-btn" data-step="-5" data-target="weight" data-key="${k}">−</button>
+              <input type="number" inputmode="decimal" data-field="weight" data-key="${k}" value="${weightVal}" placeholder="—">
+              <button class="step-btn" data-step="5" data-target="weight" data-key="${k}">+</button>
+            </div>
+            <div class="stepper reps" data-stepper="reps" data-key="${k}">
+              <span class="stepper-label">reps</span>
+              <button class="step-btn" data-step="-1" data-target="reps" data-key="${k}">−</button>
+              <input type="number" inputmode="numeric" data-field="reps" data-key="${k}" value="${repsVal}" placeholder="${repsPlaceholder}">
+              <button class="step-btn" data-step="1" data-target="reps" data-key="${k}">+</button>
+            </div>
+            <button class="check" data-key="${k}" data-ex-kind="${usesSalvageKeys ? 'salvage' : 'regular'}" data-ex-idx="${exIdx}">${done ? 'done' : 'mark'}</button>
           </div>
-          <button class="check" data-key="${k}" data-ex-kind="${usesSalvageKeys ? 'salvage' : 'regular'}" data-ex-idx="${exIdx}">${done ? 'done' : 'mark'}</button>
-        </div>
-      `);
+        `);
+      }
     }
 
     const lastDisplay = last
@@ -1436,6 +1691,7 @@
 
     const cardClass = usesSalvageKeys ? 'salvage' : (ex.strength ? 'strength' : '');
     const dataAction = usesSalvageKeys ? 'salvage' : 'regular';
+    const editBtn = usesSalvageKeys ? '' : `<button class="ex-edit-btn" data-edit-ex="${exIdx}" aria-label="Edit exercise">edit</button>`;
 
     return `
       <div class="exercise ${cardClass} ${isCollapsed ? 'collapsed' : ''}" data-ex-id="${idForKey}">
@@ -1448,6 +1704,7 @@
             <span><strong>${ex.sets}</strong>×<strong>${ex.repsLabel}</strong></span>
             <span>RPE <strong>${ex.rpe}</strong></span>
             ${ex.strength ? '<span class="tag">Strength</span>' : ''}
+            ${editBtn}
           </div>
           ${ex.note ? `<div class="ex-note">${ex.note}</div>` : ''}
           ${lastDisplay}
@@ -1561,18 +1818,18 @@
     document.querySelectorAll('.step-btn').forEach(btn => {
       btn.addEventListener('click', e => {
         e.stopPropagation();
-        const stepper = btn.closest('.stepper');
-        const input = stepper.querySelector('input');
+        const k = btn.dataset.key;
+        const target = btn.dataset.target; // weight | reps | weightA | weightB | repsA | repsB
         const step = parseFloat(btn.dataset.step);
-        const k = input.dataset.key;
-        const field = input.dataset.field;
-        const cur = parseFloat(input.value || (field === 'reps' ? input.placeholder : '0')) || 0;
+        const input = btn.parentElement.querySelector(`input[data-field="${target}"]`);
+        const isReps = target.startsWith('reps');
+        const cur = parseFloat(input.value || (isReps ? input.placeholder : '0')) || 0;
         let next = cur + step;
         if (next < 0) next = 0;
-        if (field === 'weight') next = Math.round(next * 4) / 4; // 0.25 precision
+        if (!isReps) next = Math.round(next * 4) / 4;
         input.value = next;
         if (!state.log[k]) state.log[k] = {};
-        state.log[k][field] = next;
+        state.log[k][target] = next;
         saveState();
       });
     });
@@ -1599,19 +1856,25 @@
         const exIdx = parseInt(e.currentTarget.dataset.exIdx);
         if (!state.log[k]) state.log[k] = {};
         state.log[k].done = !state.log[k].done;
-        // If marking done and reps empty, fill with target
-        if (state.log[k].done && !state.log[k].reps) {
-          let targetReps;
+        // If marking done, autofill any empty rep fields with target
+        if (state.log[k].done) {
+          let exDef;
           if (kind === 'salvage') {
             const plan = getSalvagePlan();
-            targetReps = plan.prepend[exIdx]?.reps;
+            exDef = plan.prepend[exIdx];
           } else {
             const plan = getSalvagePlan();
             const replacement = plan.replaceIndices[exIdx];
-            const ex = replacement || PROGRAM[state.currentDay].exercises[exIdx];
-            targetReps = ex.reps;
+            exDef = replacement || getEffectiveEx(PROGRAM[state.currentDay].exercises[exIdx], exIdx);
           }
-          if (targetReps) state.log[k].reps = targetReps;
+          if (exDef) {
+            if (Array.isArray(exDef.superset) && exDef.superset.length === 2) {
+              if (!state.log[k].repsA) state.log[k].repsA = exDef.reps;
+              if (!state.log[k].repsB) state.log[k].repsB = exDef.reps;
+            } else if (!state.log[k].reps) {
+              state.log[k].reps = exDef.reps;
+            }
+          }
         }
         renderWorkout();
       });
@@ -1647,9 +1910,11 @@
         const isSalvage = kind === 'salvage';
         const keyFn = isSalvage ? salvageSetKey : setKey;
         const plan = getSalvagePlan();
-        const ex = isSalvage
+        const rawEx = isSalvage
           ? plan.prepend[exIdx]
           : (plan.replaceIndices[exIdx] || PROGRAM[state.currentDay].exercises[exIdx]);
+        const ex = isSalvage ? rawEx : (plan.replaceIndices[exIdx] ? rawEx : getEffectiveEx(rawEx, exIdx));
+        const isSS = Array.isArray(ex.superset) && ex.superset.length === 2;
 
         if (action === 'fill-last') {
           if (isSalvage) {
@@ -1668,8 +1933,8 @@
 
         if (action === 'copy-first') {
           const k0 = keyFn(exIdx, 0);
-          const w = state.log[k0]?.weight;
-          if (!w) {
+          const e0 = state.log[k0];
+          if (!e0 || (!e0.weight && !e0.reps && !e0.weightA && !e0.weightB && !e0.repsA && !e0.repsB)) {
             btn.textContent = 'Set 1 empty';
             setTimeout(() => btn.textContent = 'Copy set 1 → all', 1200);
             return;
@@ -1677,7 +1942,15 @@
           for (let s = 0; s < ex.sets; s++) {
             const k = keyFn(exIdx, s);
             if (!state.log[k]) state.log[k] = {};
-            state.log[k].weight = w;
+            if (isSS) {
+              if (e0.weightA != null) state.log[k].weightA = e0.weightA;
+              if (e0.repsA != null) state.log[k].repsA = e0.repsA;
+              if (e0.weightB != null) state.log[k].weightB = e0.weightB;
+              if (e0.repsB != null) state.log[k].repsB = e0.repsB;
+            } else {
+              if (e0.weight != null) state.log[k].weight = e0.weight;
+              if (e0.reps != null) state.log[k].reps = e0.reps;
+            }
           }
           saveState();
           renderWorkout();
@@ -1688,11 +1961,25 @@
             const k = keyFn(exIdx, s);
             if (!state.log[k]) state.log[k] = {};
             state.log[k].done = true;
-            if (!state.log[k].reps) state.log[k].reps = ex.reps;
+            if (isSS) {
+              if (!state.log[k].repsA) state.log[k].repsA = ex.reps;
+              if (!state.log[k].repsB) state.log[k].repsB = ex.reps;
+            } else if (!state.log[k].reps) {
+              state.log[k].reps = ex.reps;
+            }
           }
           saveState();
           renderWorkout();
         }
+      });
+    });
+
+    // Edit-exercise buttons
+    document.querySelectorAll('[data-edit-ex]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.stopPropagation();
+        const exIdx = parseInt(btn.dataset.editEx);
+        openEditModal(exIdx);
       });
     });
   }
@@ -1767,6 +2054,78 @@
       `<div class="schedule-row"><div class="day">${row.day}</div><div class="activity">${row.action}</div></div>`
     ).join('');
   }
+
+  // ============ EDIT MODAL ============
+  let _editingExIdx = null;
+
+  function openEditModal(exIdx) {
+    _editingExIdx = exIdx;
+    const rawEx = PROGRAM[state.currentDay].exercises[exIdx];
+    const ex = getEffectiveEx(rawEx, exIdx);
+    document.getElementById('editModalTitle').textContent = rawEx.name;
+    document.getElementById('editName').value = ex.name || '';
+    document.getElementById('editSets').value = ex.sets || '';
+    document.getElementById('editReps').value = ex.repsLabel || '';
+    document.getElementById('editRpe').value = ex.rpe || '';
+    document.getElementById('editNote').value = ex.note || '';
+    document.getElementById('editModal').classList.add('show');
+  }
+
+  function closeEditModal() {
+    _editingExIdx = null;
+    document.getElementById('editModal').classList.remove('show');
+  }
+
+  function saveEditModal() {
+    if (_editingExIdx == null) return;
+    const dayKey = `${state.mode}_d${state.currentDay}`;
+    if (!state.exerciseOverrides) state.exerciseOverrides = {};
+    if (!state.exerciseOverrides[dayKey]) state.exerciseOverrides[dayKey] = {};
+    const name = document.getElementById('editName').value.trim();
+    const setsRaw = document.getElementById('editSets').value.trim();
+    const repsLabel = document.getElementById('editReps').value.trim();
+    const rpe = document.getElementById('editRpe').value.trim();
+    const note = document.getElementById('editNote').value.trim();
+    const sets = parseInt(setsRaw) || 0;
+    // Parse target reps from repsLabel (e.g. "8-10" → 9, "5" → 5)
+    let reps = parseInt(repsLabel) || 0;
+    const m = repsLabel.match(/(\d+)\s*-\s*(\d+)/);
+    if (m) reps = Math.round((parseInt(m[1]) + parseInt(m[2])) / 2);
+
+    const override = {};
+    if (name) override.name = name;
+    if (sets > 0) override.sets = sets;
+    if (repsLabel) {
+      override.repsLabel = repsLabel;
+      override.reps = reps || parseInt(repsLabel) || 1;
+    }
+    if (rpe) override.rpe = rpe;
+    if (note !== undefined) override.note = note;
+
+    state.exerciseOverrides[dayKey][_editingExIdx] = override;
+    saveState();
+    closeEditModal();
+    renderAll();
+  }
+
+  function resetEditModal() {
+    if (_editingExIdx == null) return;
+    const dayKey = `${state.mode}_d${state.currentDay}`;
+    if (state.exerciseOverrides?.[dayKey]) {
+      delete state.exerciseOverrides[dayKey][_editingExIdx];
+    }
+    saveState();
+    closeEditModal();
+    renderAll();
+  }
+
+  // Wire up modal buttons once on init
+  document.getElementById('editCancelBtn').addEventListener('click', closeEditModal);
+  document.getElementById('editSaveBtn').addEventListener('click', saveEditModal);
+  document.getElementById('editResetBtn').addEventListener('click', resetEditModal);
+  document.getElementById('editModal').addEventListener('click', e => {
+    if (e.target.id === 'editModal') closeEditModal();
+  });
 
   function renderAll() {
     renderModeSwitch();
