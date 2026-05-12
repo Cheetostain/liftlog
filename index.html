@@ -30,6 +30,8 @@
     --brass-deep: #7a6428;
     --sage: #5a6b3f;
     --shadow: rgba(70, 50, 30, 0.1);
+    /* Single accent across all modes. Mode is communicated via header label, not color. */
+    --accent: var(--burgundy);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; user-select: none; }
@@ -83,7 +85,7 @@
     font-size: 28px;
     line-height: 1;
   }
-  h1.title em { color: var(--burgundy); font-style: italic; }
+  h1.title em { color: var(--accent); font-style: italic; }
 
   /* WEEK SELECTOR */
   .week-bar {
@@ -117,8 +119,8 @@
   .week-pill.active { background: var(--ink); border-color: var(--ink); }
   .week-pill.active .num { color: var(--bg); }
   .week-pill.active .lbl { color: var(--brass); }
-  .week-pill.deload .num { color: var(--burgundy); }
-  .week-pill.deload.active { background: var(--burgundy); border-color: var(--burgundy); }
+  .week-pill.deload .num { color: var(--accent); }
+  .week-pill.deload.active { background: var(--accent); border-color: var(--accent); }
   .week-pill.deload.active .num { color: var(--bg); }
   .week-pill.deload.active .lbl { color: #f0d9aa; }
 
@@ -172,7 +174,7 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--burgundy);
+    background: var(--accent);
   }
   .day-tab.missed.active::after { background: var(--brass); }
   .day-tab.missed .day-num,
@@ -199,8 +201,8 @@
   }
   .day-skip-btn:active { transform: scale(0.95); }
   .day-skip-btn.is-skipped {
-    background: var(--burgundy);
-    border-color: var(--burgundy);
+    background: var(--accent);
+    border-color: var(--accent);
     border-style: solid;
     color: #f5e4c8;
   }
@@ -225,7 +227,7 @@
 
   /* SKIP NOTICE for the current day if missed */
   .skip-notice {
-    background: var(--burgundy);
+    background: var(--accent);
     color: #f5e4c8;
     padding: 14px 16px;
     margin-bottom: 16px;
@@ -311,10 +313,10 @@
     font-weight: 600;
     line-height: 1.05;
   }
-  .session-header h2 em { font-style: italic; color: var(--burgundy); }
+  .session-header h2 em { font-style: italic; color: var(--accent); }
 
   .deload-banner {
-    background: var(--burgundy);
+    background: var(--accent);
     color: #f5e4c8;
     padding: 10px 12px;
     margin-bottom: 14px;
@@ -349,7 +351,7 @@
     justify-content: space-between;
     gap: 8px;
   }
-  .strength .ex-name { color: var(--burgundy); }
+  .strength .ex-name { color: var(--accent); }
 
   .ex-name .chevron {
     font-size: 14px;
@@ -379,7 +381,7 @@
     letter-spacing: 0.18em;
     font-size: 8px;
   }
-  .strength .ex-target .tag { background: var(--burgundy); color: #f5e4c8; }
+  .strength .ex-target .tag { background: var(--accent); color: #f5e4c8; }
 
   .ex-note {
     margin-top: 6px;
@@ -531,8 +533,8 @@
     color: var(--brass);
   }
   .strength .set-row.done .check {
-    background: var(--burgundy);
-    border-color: var(--burgundy);
+    background: var(--accent);
+    border-color: var(--accent);
     color: #f5e4c8;
   }
 
@@ -715,7 +717,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    color: var(--burgundy);
+    color: var(--accent);
   }
   .schedule-row .activity { color: var(--ink); font-weight: 500; }
 
@@ -773,7 +775,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-size: 18px;
     font-weight: 700;
-    color: var(--burgundy);
+    color: var(--accent);
     margin: 14px 0 6px;
     line-height: 1.1;
   }
@@ -793,7 +795,7 @@
     font-family: 'Cormorant Garamond', serif;
     font-style: italic;
     font-weight: 700;
-    color: var(--burgundy);
+    color: var(--accent);
     font-size: 16px;
     line-height: 1.3;
   }
@@ -877,8 +879,8 @@
     transition: all 0.15s ease;
   }
   .btn:active { background: var(--ink); color: var(--bg); }
-  .btn.danger { border-color: var(--burgundy); color: var(--burgundy); }
-  .btn.danger:active { background: var(--burgundy); color: var(--bg); }
+  .btn.danger { border-color: var(--accent); color: var(--accent); }
+  .btn.danger:active { background: var(--accent); color: var(--bg); }
 
   /* SAVE PILL */
   .save-pill {
@@ -909,7 +911,7 @@
   }
   .progress-strip .fill {
     height: 100%;
-    background: var(--burgundy);
+    background: var(--accent);
     width: 0%;
     transition: width 0.3s ease;
   }
@@ -921,8 +923,9 @@
     padding: 10px 12px;
   }
   .set-row.superset-row .check {
-    height: 120px;
-    align-self: center;
+    height: 104px;
+    align-self: start;
+    margin-top: 24px;
     font-size: 14px;
   }
   .superset-pair {
@@ -933,7 +936,7 @@
   .ss-lift {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 12px;
   }
   .ss-lbl {
     font-family: 'Cormorant Garamond', serif;
@@ -970,7 +973,7 @@
     opacity: 0.65;
     transition: opacity 0.15s ease;
   }
-  .ex-edit-btn:hover, .ex-edit-btn:active { opacity: 1; color: var(--burgundy); }
+  .ex-edit-btn:hover, .ex-edit-btn:active { opacity: 1; color: var(--accent); }
 
   /* EDIT MODAL */
   .modal-backdrop {
@@ -1011,7 +1014,7 @@
     font-weight: 600;
     line-height: 1.1;
   }
-  .modal-title em { font-style: italic; color: var(--burgundy); }
+  .modal-title em { font-style: italic; color: var(--accent); }
   .modal-body {
     padding: 14px 16px 16px;
   }
@@ -1039,7 +1042,7 @@
   }
   .modal-field input:focus {
     outline: none;
-    border-color: var(--burgundy);
+    border-color: var(--accent);
     background: rgba(255,255,255,0.8);
   }
   .modal-field-row {
@@ -1269,12 +1272,13 @@
           name: "Pull Priority",
           focus: "Upper",
           exercises: [
-            { name: "Weighted Pull-up", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Priority lift. +2.5/5 lbs/wk." },
+            { name: "Weighted Chin-up", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Priority lift. Supinated grip = more bicep, similar lat. +2.5/5 lbs/wk." },
             { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "First bench of the week. +5 lbs/wk." },
-            { name: "Chest-Supported Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8-9", note: "Pull break between bench and incline." },
+            { name: "Chest-Supported Row", sets: 2, reps: 11, repsLabel: "10-12", rpe: "8", note: "WIDE grip, pull HIGH (to chest). Rear delt + mid trap biased." },
             { name: "Incline DB Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8" },
-            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["EZ Curl", "Skullcrusher"] }
+            { name: "Face Pull", sets: 2, reps: 17, repsLabel: "15-20", rpe: "9", note: "Rear delt finisher. 2 sets is enough alongside wide row." },
+            { name: "Curl + Skullcrusher", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["EZ Curl", "Skullcrusher"] },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "End of session to spare side delt recovery from face pull fatigue." }
           ]
         },
         2: {
@@ -1284,8 +1288,7 @@
             { name: "Zercher Squat", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8", note: "48hr from Wed BJJ + 48hr to Sat. Clean window." },
             { name: "Lying Leg Curl", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8" },
             { name: "Leg Press", sets: 3, reps: 11, repsLabel: "10-12", rpe: "8" },
-            { name: "Standing Calf Raise", sets: 4, reps: 10, repsLabel: "8-12", rpe: "9-10" },
-            { name: "Hanging Leg Raise", sets: 3, reps: 10, repsLabel: "10", rpe: "9" }
+            { name: "Standing Calf Raise", sets: 4, reps: 10, repsLabel: "8-12", rpe: "9-10", note: "BJJ + Zercher isometric covers core. Ab work dropped from this day." }
           ]
         },
         3: {
@@ -1293,19 +1296,20 @@
           focus: "Upper",
           exercises: [
             { name: "Barbell Bench", sets: 4, reps: 5, repsLabel: "5", rpe: "7-8", strength: true, note: "Second bench of the week. Heavy." },
-            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Use straps. Spare grip for Sat open mat. Recovery between bench and dip." },
+            { name: "Seated Cable Row", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "WIDE grip, pull HIGH. 2nd rear delt hit of the week. Use straps, spare grip for Sat." },
             { name: "Weighted Dip", sets: 3, reps: 7, repsLabel: "6-8", rpe: "8", note: "Tris ~5min recovered from bench. Heavier load possible now." },
             { name: "DB Shoulder Press", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8-9" },
-            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10" },
-            { name: "Curl + Tri Extension", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["Incline Curl", "OH Tri Extension"] }
+            { name: "Curl + Tri Extension", sets: 3, reps: 11, repsLabel: "10-12", rpe: "9", note: "Superset.", superset: ["Incline Curl", "OH Tri Extension"] },
+            { name: "Lateral Raise", sets: 4, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "End of session. Side delts last." }
           ]
         },
         4: {
           name: "Hybrid · Optional",
           focus: "Mixed",
           exercises: [
-            { name: "Front Squat / Hack", sets: 3, reps: 11, repsLabel: "10-12", rpe: "7-8", note: "Optional day. Skip if cooked. Lighter RPE." },
-            { name: "Romanian Deadlift", sets: 3, reps: 9, repsLabel: "8-10", rpe: "7-8" },
+            { name: "Front Squat / Hack", sets: 3, reps: 11, repsLabel: "10-12", rpe: "7-8", note: "Optional day. Skip if cooked." },
+            { name: "Bulgarian Split Squat", sets: 3, reps: 9, repsLabel: "8-10", rpe: "8", note: "Replaces RDL. Spares lower back (Zercher + BJJ already taxed it)." },
+            { name: "Face Pull or Rear Delt Machine", sets: 2, reps: 17, repsLabel: "15-20", rpe: "9", note: "3rd rear delt hit if you do Day 4. Posture insurance." },
             { name: "Cable Lateral Raise", sets: 4, reps: 15, repsLabel: "15", rpe: "9-10" },
             { name: "Hammer Curl + Pushdown", sets: 3, reps: 13, repsLabel: "12-15", rpe: "9-10", note: "Superset.", superset: ["Hammer Curl", "Rope Pushdown"] }
           ]
@@ -1478,30 +1482,46 @@
     const program = PROGRAM[day];
     if (!program) return plan;
 
-    // Day 3 missed → carry weighted pullup salvage to Day 4
-    if (day === 4 && isMissed(3) && !isMissed(4)) {
-      plan.prepend.push({
-        name: "Weighted Pull-up",
-        sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
-        strength: true,
-        salvageFrom: "Day 3"
-      });
-      plan.banner = "Day 3 missed this week. Weighted pull-up added as the priority salvage. Hit it first while fresh.";
-    }
-
-    // Day 1 missed → replace comp bench skill on Day 3 with priority bench
-    if (day === 3 && isMissed(1) && !isMissed(3)) {
-      const compBenchIdx = program.exercises.findIndex(e => e.name.toLowerCase().includes('comp bench'));
-      if (compBenchIdx !== -1) {
-        plan.replaceIndices[compBenchIdx] = {
-          name: "Barbell Bench (priority salvage)",
+    if (state.mode === 'standard') {
+      // Day 3 missed → carry weighted pullup salvage to Day 4
+      if (day === 4 && isMissed(3) && !isMissed(4)) {
+        plan.prepend.push({
+          name: "Weighted Pull-up",
           sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
           strength: true,
-          note: "Replaces comp bench. Heavy work to recover bench progress.",
-          salvageFrom: "Day 1"
-        };
+          salvageFrom: "Day 3"
+        });
+        plan.banner = "Day 3 missed this week. Weighted pull-up added as the priority salvage. Hit it first while fresh.";
       }
-      plan.banner = (plan.banner ? plan.banner + " " : "") + "Day 1 missed this week. Comp bench replaced with heavy bench 4×5 to keep bench progression alive.";
+
+      // Day 1 missed → replace comp bench skill on Day 3 with priority bench
+      if (day === 3 && isMissed(1) && !isMissed(3)) {
+        const compBenchIdx = program.exercises.findIndex(e => e.name.toLowerCase().includes('comp bench'));
+        if (compBenchIdx !== -1) {
+          plan.replaceIndices[compBenchIdx] = {
+            name: "Barbell Bench (priority salvage)",
+            sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
+            strength: true,
+            note: "Replaces comp bench. Heavy work to recover bench progress.",
+            salvageFrom: "Day 1"
+          };
+        }
+        plan.banner = (plan.banner ? plan.banner + " " : "") + "Day 1 missed this week. Comp bench replaced with heavy bench 4×5 to keep bench progression alive.";
+      }
+    } else if (state.mode === 'bjj') {
+      // BJJ Mode: Day 1 has BOTH chin + bench. Day 3 has bench again.
+      // If Day 1 missed and you make it to Day 3, you still get bench. Just lose chin frequency for the week.
+      // If Day 3 missed and you make it to Day 4, salvage the bench (since Day 4 is hybrid and has no bench).
+      if (day === 4 && isMissed(3) && !isMissed(4)) {
+        plan.prepend.push({
+          name: "Barbell Bench (salvage)",
+          sets: 4, reps: 5, repsLabel: "5", rpe: "7-8",
+          strength: true,
+          note: "Day 3 missed. Heavy bench to keep weekly bench frequency at 2x.",
+          salvageFrom: "Day 3"
+        });
+        plan.banner = "Day 3 missed this week. Barbell bench salvaged to Day 4 to preserve bench progression.";
+      }
     }
 
     return plan;
@@ -1732,7 +1752,7 @@
 
     let html = `
       <div class="session-header">
-        <div class="focus">Day ${state.currentDay} · Week ${state.currentWeek}${isDeload ? " · Deload" : ""}${dayMissed ? " · Missed" : ""}</div>
+        <div class="focus">${PROGRAMS[state.mode].label} · Day ${state.currentDay} · Week ${state.currentWeek}${isDeload ? " · Deload" : ""}${dayMissed ? " · Missed" : ""}</div>
         <h2>${titleStart} <em>${titleEm}</em></h2>
         <button class="day-skip-btn ${dayMissed ? 'is-skipped' : ''}" id="daySkipBtn">${dayMissed ? 'Skipped' : 'Skip day'}</button>
       </div>
